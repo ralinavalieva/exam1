@@ -1,0 +1,11 @@
+def uppercase(func):
+    def wrapper():
+        result = func()
+        if isinstance(result, str):
+            return result.upper()
+        return result
+    return wrapper
+@uppercase
+def say_hello():
+    return "привет"
+print(say_hello())
